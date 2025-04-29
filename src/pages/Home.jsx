@@ -7,7 +7,7 @@ return (
     <section
         id="hero-section"
         className="h-[85vh] w-full grid grid-cols-12 items-center justify-center fixed snap-center">
-        <div id="hero" className="w-full h-full flex flex-col col-span-5 justify-center text-right font-head">
+        <div id="hero" className="w-full h-full flex flex-col col-span-5 justify-center text-right font-head dark:text-dominoivory text-fadedblack">
             <h1 className="uppercase text-8xl">
                 Jordan
                 <br /> Keller

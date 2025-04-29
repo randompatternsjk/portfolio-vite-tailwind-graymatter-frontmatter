@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
-import About from './pages/GoodWork';
+import About from './pages/About';
 import './styles/globals.css'; // Import global styles
 
 function App() {
@@ -42,14 +42,14 @@ function App() {
         <div className="absolute bottom-4 left-1/2 z-50">
           <button
             onClick={toggleDarkMode}
-            className="px-4 py-2 text-fadedblack rounded outline-dashed dark:hover:outline-dominoivory dark:text-fadedblack hover:text-dominoivory transition duration-300 ease-in-out"
+            className="px-4 py-2 text-dominoivory hover:text-fadedblack rounded outline-dashed dark:hover:outline-dominoivory dark:text-fadedblack hover:text-dominoivory transition duration-300 ease-in-out"
           >
-            {isDarkMode ? 'Attention Business Person, Do not click this!' : 'Dweeb Mode Activated!'}
+            {isDarkMode ? 'Attention Business Person, Do not click this!' : 'Dweeb Mode: Activated!'}
           </button>
         </div>
 
         {/* Main Content */}
-        <main className="flex-grow text-fadedblack dark:text-dominoivory relative z-10">
+        <main className="flex-grow text-fadedblack dark:dominoivory relative z-10">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
