@@ -1,49 +1,63 @@
 // src/App.jsx
-import React from 'react'
-import TestMDX from './test.mdx' // Example MDX import
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Home from './pages/Home';
+import About from './pages/GoodWork';
+import './styles/globals.css'; // Import global styles
 
-export default function App() {
+function App() {
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    // Check the initial theme preference
+    return (
+      localStorage.theme === 'dark' ||
+      (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+    );
+  });
+
+  useEffect(() => {
+    // Apply the theme class to the document element
+    document.documentElement.classList.toggle('dark', isDarkMode);
+    localStorage.theme = isDarkMode ? 'dark' : 'light';
+  }, [isDarkMode]);
+
+  const toggleDarkMode = () => {
+    setIsDarkMode((prevMode) => !prevMode);
+  };
+
   return (
-    <div className="min-h-screen bg-gray-50 p-8">
-      <header className="mb-12 text-center">
-        <h1 className="text-4xl font-bold text-indigo-600 mb-4">
-          Welcome to Your Portfolio
-        </h1>
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          This starter includes Tailwind CSS + Vite + MDX support
-        </p>
-      </header>
+    <Router>
+      {/* Film Grain Background */}
+      <div
+        className="fixed inset-0 w-full h-full pointer-events-none z-0 opacity-10"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)'/%3E%3C/svg%3E")`,
+        }}
+      />
+      <div className="flex flex-col min-h-screen dark:bg-fadedblack bg-dominoivory text-fadedblack dark:text-dominoivory relative">
+        {/* Navigation Bar */}
+        <Navbar />
 
-      <main className="max-w-4xl mx-auto">
-        <section className="bg-white rounded-xl shadow-md p-8 mb-8">
-          <h2 className="text-2xl font-semibold text-gray-800 mb-4">
-            Tailwind Styled Section
-          </h2>
-          <div className="space-y-4">
-            <p className="text-gray-600">
-              This card uses Tailwind's utility classes for:
-            </p>
-            <ul className="list-disc pl-6 text-gray-700">
-              <li>Padding</li>
-              <li>Shadows</li>
-              <li>Colors</li>
-              <li>Typography</li>
-            </ul>
-            <button className="mt-4 px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors">
-              Example Button
-            </button>
-          </div>
-        </section>
+        {/* Dark Mode Toggle */}
+        <div className="absolute bottom-4 left-1/2 z-50">
+          <button
+            onClick={toggleDarkMode}
+            className="px-4 py-2 text-fadedblack rounded outline-dashed dark:hover:outline-dominoivory dark:text-fadedblack hover:text-dominoivory transition duration-300 ease-in-out"
+          >
+            {isDarkMode ? 'Attention Business Person, Do not click this!' : 'Dweeb Mode Activated!'}
+          </button>
+        </div>
 
-        {/* MDX Content */}
-        <section className="bg-white rounded-xl shadow-md p-8">
-          <TestMDX />
-        </section>
-      </main>
-
-      <footer className="mt-12 text-center text-gray-500">
-        <p>© {new Date().getFullYear()} Your Portfolio</p>
-      </footer>
-    </div>
-  )
+        {/* Main Content */}
+        <main className="flex-grow text-fadedblack dark:text-dominoivory relative z-10">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+          </Routes>
+        </main>
+      </div>
+    </Router>
+  );
 }
+
+export default App;

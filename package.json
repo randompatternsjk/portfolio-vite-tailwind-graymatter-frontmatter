@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "randompatternsjk"
+    "url": "https://github.com/randompatternsjk/portfolio-vite-tailwind-graymatter-frontmatter.git"
   },
   "keywords": [],
   "author": "",
@@ -32,6 +32,7 @@
     "@mdx-js/loader": "^3.1.0",
     "@tailwindcss/postcss": "^4.1.4",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^7.5.3"
   }
 }
