@@ -3,8 +3,8 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
-import About from './pages/About';
 import './styles/globals.css'; // Import global styles
+import GoodWork from './pages/GoodWork';
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(() => {
@@ -52,7 +52,7 @@ function App() {
         <main className="flex-grow text-fadedblack dark:dominoivory relative z-10">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
+            <Route path="/goodwork" element={<GoodWork />} />
           </Routes>
         </main>
       </div>

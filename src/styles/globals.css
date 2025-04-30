@@ -15,5 +15,15 @@
 @theme {  
     --font-desc: "Inter", "GT Pressure Mono", "sans-serif"; 
     --font-head: "Oswald", "League Gothic", "sans-serif"; 
-    --color-fadedblack: #100B0F;
-    --color-dominoivory: #E5DDCB;}
+        --color-fadedblack: #100B0F;
+        --color-dominoivory: #E5DDCB;
+        --color-bloodrust: #8C4A3A;
+        --color-burnedorange: #C86E4B;
+        --color-dirtygold: #B89F65;
+        --color-sicklyteal: #6F8B85;
+        --color-deepslate: #3A4A5F;
+        --color-dustyplum: #5E4A5A;
+        --color-errorred: #A63A3A;
+        --color-staticgray: #7A7A7A;
+        --color-overexposed: #F0E7D1;
+      }

@@ -14,7 +14,6 @@ return (
             </h1>
             <h2 className="uppercase inline-block text-4xl">
                 Storyteller<br /> 
-                Songwriter<br /> 
                 Producer<br /> 
                 Director
             </h2>
@@ -24,16 +23,16 @@ return (
         <div className="flex flex-col col-span-7 justify-center align-items-right">
        <img
                 id="hero-image"
-                src="/public/hero/hero-image.jpg"
+                src="/hero/hero-image.jpg"
                 alt="Jordan Keller: Huge Dweeb"
-                className="mask-r-from-70% mask-b-from-80% mask-radial-from-40% mask-radial-to-70% object-contain"
+                className="mask-r-from-70% mask-b-from-80% mask-radial-from-40% mask-radial-to-90% object-contain"
             />
          
         </div>
-        <div className="absolute object-contain w-full h-full flex items-center justify-center transform -translate-x-12 translate-y-70 rotate-40">
+        <div className="absolute object-contain w-full h-full flex items-center justify-center transform -translate-x-45 translate-y-60 rotate-40">
             <img
                 id="huge-creative-dweeb"
-                src="/public/hero/huge-creative-dweeb.png"
+                src="/hero/huge-creative-dweeb.png"
                 alt="Huge Creative Dweeb"
                 className="w-60"
             />
