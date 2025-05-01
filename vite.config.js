@@ -8,13 +8,14 @@ export default defineConfig({
   plugins: [
     react(),
     mdx({
+      providerImportSource: '@mdx-js/react',
       remarkPlugins: [
-        remarkFrontmatter,
-        [remarkMdxFrontmatter, { name: 'frontmatter' }]
-      ]
-    })
+        remarkFrontmatter, // Parses YAML frontmatter
+        [remarkMdxFrontmatter, { name: 'frontmatter' }], // Exposes frontmatter as a named export
+      ],
+    }),
   ],
   css: {
-    postcss: './postcss.config.js'
-  }
+    postcss: './postcss.config.js',
+  },
 });

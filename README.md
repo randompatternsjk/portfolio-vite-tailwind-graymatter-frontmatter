@@ -31,4 +31,6 @@ A portfolio with a card grid and modal details. Projects are stored as MDX files
 
 ✅ **Dynamic interactivity** (client-side MDX rendering)
 
+The modal content in GoodWork.jsx is wrapped in "prose" thanks to MDX it's stylable.
+
 
