@@ -1,5 +1,4 @@
 import React from "react";
-import filmGrain from "/assets/filmGrain.svg";
 
 function Home() {
   return (
