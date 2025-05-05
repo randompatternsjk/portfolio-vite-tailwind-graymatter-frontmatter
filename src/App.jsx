@@ -53,8 +53,11 @@ function App() {
                     </div>
                     <GoodWork />
 
-                    <div className="text-dominoivory font-head text-center text-[1vw] uppercase">
-                      <a href="/good-work" className="underline">
+                    <div className="text-dominoivory font-head mt-20 mb-80 text-center text-3xl uppercase">
+                      <a
+                        href="https://jordan-keller.squarespace.com/work"
+                        className="underline"
+                      >
                         See more
                       </a>
                     </div>
