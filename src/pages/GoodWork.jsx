@@ -49,7 +49,7 @@ function GoodWork() {
       {activeProject && (
         <MDXProvider components={MDXComponents}>
           <Modal onClose={() => setActiveProject(null)}>
-            <div className="flex h-screen snap-y snap-mandatory flex-col gap-4 overflow-y-scroll">
+            <div className="mx-auto flex h-screen max-w-full snap-y snap-mandatory flex-col gap-4 overflow-hidden overflow-y-scroll px-4">
               {/* Cover Image */}
               <div className="flex w-full snap-start flex-col">
                 <img
