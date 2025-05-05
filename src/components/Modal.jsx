@@ -30,7 +30,7 @@ function Modal({ children, onClose }) {
       onClick={onClose}
     >
       <div
-        className={`relative max-w-5xl transform rounded-lg bg-white transition-all duration-250 ease-in-out dark:bg-white/100 ${
+        className={`relative mx-auto w-full max-w-4xl transform overflow-hidden rounded-lg bg-white px-4 transition-all duration-250 ease-in-out dark:bg-white/100 ${
           isVisible ? "scale-100 opacity-100" : "scale-95 opacity-0"
         }`}
         onClick={(e) => e.stopPropagation()}
