@@ -12,12 +12,6 @@ function Navbar() {
               Good Work
             </Link>
           </li>
-
-          <li>
-            <Link to="/" className="hover:underline">
-              Work With Me
-            </Link>
-          </li>
         </ul>
       </div>
     </nav>

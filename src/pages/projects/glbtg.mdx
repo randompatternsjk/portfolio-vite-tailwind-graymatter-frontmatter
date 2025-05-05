@@ -5,11 +5,11 @@ tags: ["Brand Repositioning Campaign", "Content Strategy", "Creative Direction"]
 coverImage: "/projects/glbtg/featured.webp"
 logline: "A top-to-bottom brand relaunch to reposition Groupon from a discount provider to a portal for life-changing experiences."
 type: "Global Brand Transformation"
-color: "#EBFEEB"
+color: "#ECFFEB"
 media:
   fromImage: "/projects/glbtg/from.gif"
   toImage: "/projects/glbtg/to.gif"
-  videoThumb1: "/projects/glbtg/video-thumb1.webp"
+  heroThumb: "/projects/glbtg/video-thumb1.webp"
   heroVideo: "mW44RkdC8oA"
 
   messaging1: "/projects/glbtg/messaging/1.png"
@@ -18,10 +18,12 @@ media:
   messaging4: "/projects/glbtg/messaging/4.png"
 
 production: |
-  Paid/Organic Social Campaign
-  $100,000 Sweepstakes
-  Cross-platform Adaptation
-  Remote Video Production
+  Brand Guidelines
+  Messaging Frameworks
+  Visual & Content Guidelines
+  360 Brand Campaign
+  Brand Hero Ad
+  Global Content Strategy
 ---
 
 export const { media, production } = frontmatter;
@@ -31,8 +33,10 @@ export const { media, production } = frontmatter;
 <Research>
 
 <Callout type="research">
-  <div className="font-head mx-auto my-auto text-6xl">Key Findings</div>
-  Two succesful brand test campaigns suggested it was time for a full
+  <div className="font-head mx-auto my-auto text-6xl uppercase">
+    Key Insight
+  </div>
+  Two succesful brand test campaigns showed us: it was time for a full
   top-to-bottom rebrand.
 </Callout>
 
@@ -40,7 +44,7 @@ The world was opening up post-lockdown with people hungry for experiences, but G
 
 **"Groupon... still exists?"**
 
-Key findings:
+Key takeaways following the success of Yep, There's a Groupon for That and So #@$%ing Ready.
 
 1. Outdated visual identity
 2. Brand had lost its signature quirkiness
@@ -98,12 +102,13 @@ Key findings:
 <Direction>
 <div className="mx-auto w-full">
 <FromTo
-  color="#FE14C5"
+  color="#ECFFEB"
   fromImage={media.fromImage}
   toImage={media.toImage}
   production={production}
   fromCaption='"Groupon? The deals site from the first Obama administration? Never heard of her." - Mariah, Groupon Hater'
   toCaption='** high-pitched squealing ** Liz, checking her Groupon app everyday'
+  className="text-black"
 />
 </div>
 
@@ -145,6 +150,7 @@ Key findings:
 # Production
 
 <Production>
+<p className="text-white">-</p>
 
 ## Brand Voice & Messaging Framework
 
@@ -232,43 +238,43 @@ Key findings:
 
     ## Social
 
-<div className="gap-4 p-4 w-2/3 items-center">
+<div className="grid grid-cols-4 rows-8 gap-4 p-4 w-full items-center center-content justify-between">
 
 <img
   src="/projects/glbtg/social/1.gif"
   alt="Grab Life By The Groupon - Social"
-  className="w-full rounded-md shadow-lg"
+  className="col-span-3 w-full rounded-md shadow-lg"
 />
 <img
   src="/projects/glbtg/social/2.png"
   alt="Grab Life By The Groupon - Social"
-  className="w-full rounded-md shadow-lg"
+  className="col-span-2 w-full rounded-md shadow-lg"
 />
 <img
   src="/projects/glbtg/social/3.webp"
   alt="Grab Life By The Groupon - Social"
-  className="w-full rounded-md shadow-lg"
+  className="col-span-2 w-full rounded-md shadow-lg"
 />
 
 <img
   src="/projects/glbtg/social/xyz1.jpg"
   alt="Grab Life By The Groupon - Social"
-  className="w-full rounded-md shadow-lg"
+  className="col-span-1 w-full rounded-md shadow-lg"
 />
 <img
   src="/projects/glbtg/social/xyz2.jpg"
   alt="Grab Life By The Groupon - Social"
-  className="w-full rounded-md shadow-lg"
+  className="col-span-1 w-full rounded-md shadow-lg"
 />
 <img
   src="/projects/glbtg/social/xyz3.jpg"
   alt="Grab Life By The Groupon - Social"
-  className="w-full rounded-md shadow-lg"
+  className="col-span-1 w-full rounded-md shadow-lg"
 />
 <img
   src="/projects/glbtg/social/xyz4.jpg"
   alt="Grab Life By The Groupon - Social"
-  className="w-full rounded-md shadow-lg"
+  className="col-span-1 w-full rounded-md shadow-lg"
 />
 
     </div>
@@ -285,8 +291,11 @@ Key findings:
 
     </div>
 
-<VideoComponent thumb={media.videoWeek1thumb} video={media.video1} />
+## Brand Hero Ad
 
+<VideoComponent thumb={media.heroThumb} video={media.heroVideo} />
+
+<p className="text-white">-</p>
 </Production>
 
 <Results>

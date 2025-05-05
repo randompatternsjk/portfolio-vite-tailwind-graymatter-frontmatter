@@ -6,7 +6,7 @@ function Home() {
     <>
       <section
         id="hero-section"
-        className="fixed grid h-[85vh] w-full snap-center grid-cols-12 items-center justify-center"
+        className="grid h-auto w-full snap-center grid-cols-12 items-center justify-center"
       >
         <div
           id="hero"
@@ -25,7 +25,7 @@ function Home() {
           </h2>
         </div>
 
-        <div className="align-items-right col-span-7 flex flex-col justify-center">
+        <div className="align-items-right relative col-span-7 flex flex-col justify-center">
           <img
             id="hero-image"
             src="/hero/hero-image.jpg"
@@ -33,12 +33,11 @@ function Home() {
             className="mask-r-from-70% mask-b-from-80% mask-radial-from-40% mask-radial-to-90% object-contain"
           />
         </div>
-        <div className="absolute flex h-full w-full rotate-30 transform items-center justify-center object-contain md:-translate-x-[4vw] md:translate-y-[13vh] lg:-translate-x-[4vw] lg:translate-y-[32vh]">
+        <div className="w-[18vw] translate-x-[37vw] -translate-y-[10vw] rotate-30 transform object-contain">
           <img
             id="huge-creative-dweeb"
             src="/hero/huge-creative-dweeb.png"
             alt="Huge Creative Dweeb"
-            className="sm:w-45 md:w-45 lg:w-80"
           />
         </div>
       </section>

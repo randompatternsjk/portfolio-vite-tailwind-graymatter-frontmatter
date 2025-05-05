@@ -20,10 +20,27 @@ export const MDXComponents = {
     </h3>
   ),
   p: ({ children, ...props }) => (
-    <p className="text-md mb-4 leading-relaxed text-gray-900" {...props}>
+    <p className="text-md mb-4 leading-relaxed" {...props}>
       {children}
     </p>
   ),
+
+  ul: ({ children, ...props }) => (
+    <ul className="mb-4 ml-8 list-disc" {...props}>
+      {children}
+    </ul>
+  ),
+  ol: ({ children, ...props }) => (
+    <ol className="mb-4 ml-8 list-decimal" {...props}>
+      {children}
+    </ol>
+  ),
+  li: ({ children, ...props }) => (
+    <li className="mb-2 ml-8" {...props}>
+      {children}
+    </li>
+  ),
+
   img: ({ src, alt, ...props }) => (
     <div className="my-6">
       <img
@@ -41,7 +58,7 @@ export const MDXComponents = {
       <section className="border-fadedblack my-10 ml-4 flex h-full snap-start flex-col items-start gap-8 border-l-3 border-dotted p-4 align-middle sm:gap-4 md:flex-col lg:flex-row">
         <div className="text-balanced mx-auto flex-2 pl-8">{content}</div>
 
-        <div className="flex-1">{image}</div>
+        <div className="co flex-1">{image}</div>
       </section>
     );
   },
@@ -105,11 +122,11 @@ export const MDXComponents = {
             Via
           </div>
           <div
-            className="font-head grid w-full grid-cols-1 gap-2 p-4 text-left text-sm font-semibold text-white uppercase shadow-lg sm:grid-cols-2 lg:grid-cols-3"
+            className="font-desc grid w-full grid-cols-1 gap-2 p-4 text-left text-sm font-semibold text-white uppercase shadow-lg sm:grid-cols-2 lg:grid-cols-3"
             style={{ backgroundColor: color }}
           >
             {production.split("\n").map((line, index) => (
-              <div key={index} className="mb-2">
+              <div key={index} className="mb-2 text-black">
                 {line}
               </div>
             ))}

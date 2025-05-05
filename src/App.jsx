@@ -35,15 +35,33 @@ function App() {
           backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)'/%3E%3C/svg%3E")`,
         }}
       />
-      <div className="relative flex min-h-screen flex-col">
-        {/* Navigation Bar */}
-        <Navbar />
-
+      <div className="relative flex h-full min-h-screen flex-col gap-8">
         {/* Main Content */}
         <main className="bg-fadedblack relative z-10 flex-grow">
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/goodwork" element={<GoodWork />} />
+            {/* Separate Home and GoodWork into their own rows */}
+            <Route
+              path="/"
+              element={
+                <div className="flex w-full flex-col gap-2">
+                  <div className="w-full">
+                    <Home />
+                  </div>
+                  <div className="w-full">
+                    <div className="text-dominoivory font-head text-center text-[4vw] uppercase">
+                      Good Work
+                    </div>
+                    <GoodWork />
+
+                    <div className="text-dominoivory font-head text-center text-[1vw] uppercase">
+                      <a href="/good-work" className="underline">
+                        See more
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              }
+            />
           </Routes>
         </main>
       </div>

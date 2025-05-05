@@ -33,9 +33,9 @@ function GoodWork() {
   }, []);
 
   return (
-    <div className="container mx-auto mt-16 py-8">
+    <div className="container mx-auto my-auto">
       {/* Project Grid */}
-      <div className="columns-1 gap-4 md:columns-2 lg:columns-3">
+      <div className="columns-1 gap-4 md:columns-1 lg:columns-3">
         {projectList.map((project) => (
           <ProjectCard
             key={project.slug}
