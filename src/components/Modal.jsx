@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 function Modal({ children, onClose }) {
   const [isVisible, setIsVisible] = useState(false);
@@ -8,22 +8,36 @@ function Modal({ children, onClose }) {
     return () => setIsVisible(false);
   }, []);
 
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        onClose(); // Call the onClose function when Esc is pressed
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown); // Cleanup the event listener
+    };
+  }, [onClose]);
+
   return (
     <div
-      className={`fixed inset-0 bg-fadedblack/90 backdrop-blur-md duration-300 bg-opacity-50 flex items-center justify-center z-50 transition-opacity duration-100 ease-in-out ${
-        isVisible ? 'opacity-100' : 'opacity-0'
+      className={`bg-fadedblack/90 bg-opacity-50 fixed inset-0 z-50 flex items-center justify-center backdrop-blur-md transition-opacity duration-100 duration-300 ease-in-out ${
+        isVisible ? "opacity-100" : "opacity-0"
       }`}
       onClick={onClose}
     >
       <div
-        className={`bg-white dark:bg-white/100 rounded-lg p-6 max-w-6xl w-full relative transform transition-all duration-100 ease-in-out ${
-          isVisible ? 'scale-100 opacity-100' : 'scale-95 opacity-0'
+        className={`relative max-w-5xl transform rounded-lg bg-white transition-all duration-250 ease-in-out dark:bg-white/100 ${
+          isVisible ? "scale-100 opacity-100" : "scale-95 opacity-0"
         }`}
         onClick={(e) => e.stopPropagation()}
       >
         <button
           onClick={onClose}
-          className="absolute top-2 right-3 text-gray-600 dark:text-gray-500 hover:text-black dark:hover:text-white"
+          className="absolute top-2 right-3 z-50 size-12 font-bold text-white hover:text-black"
         >
           ✕
         </button>
